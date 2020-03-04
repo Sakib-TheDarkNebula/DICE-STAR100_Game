@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dice Game</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+
+    <body>
+
+        <!-- BONUS FEATURES --> 
+        <!-- Game Rules Container -->
+        <div class="rules-container sub-conts display-transition" id="rules-container">
+            <h2 id="game-rules-header" style="color: black;">GAME RULES</h2>
+            <br>
+            <div id="game-rules" class="sub-conts-change">
+                <ol>
+                    <li>The game has two players, playing in rounds</li>
+                    <li>In each turn, the player rolls the dices as many times as he wishes. Each result gets added to his CURRENT SCORE</li>
+                    <li>But if the player rolls 1 in any of the dices, his CURRENT SCORE gets lost. Morever, if the player rolls 6 in both of the dices, all his GLOBAL SCORES gets lost. After that, it's the next player's turn</li>
+                    <li>The player can choose hold which means that his CURRENT SCORE gets added to his GLOBAL SCORE</li>
+                    <li>The first player to reach 100 (or the score defined by the players) wins the game!</li>
+                </ol>
+            </div>
+            <button id="next-1" class="next-btn">Next</button>
+        </div>
+
+        <!-- Player names Container -->
+        <div class="sub-conts display-transition" id="player-names-container" style="display: none;">
+            <h2 id="player-names-header" style="color: black;">PLAYER NAMES</h2>
+            <br>    
+            <div class="player-names-cont sub-conts-change">
+                <h2 class="player-names-cont-header">Please write the name of the Players</h2>
+                <br>
+                <input type="text" maxlength="9" class="player-1-name player-names" id="player-1-name" placeholder="PLAYER 1">
+                <br><br>
+                <input type="text" maxlength="9" class="player-2-name player-names" id="player-2-name" placeholder="PLAYER 2">
+                <br>
+                <p id="name-validator" style="display: inline-block;"></p>
+            </div>
+            <input type="submit" id="next-2" class="next-btn" value="Next">
+        </div>
+
+        <!-- Whole Container -->
+        <div class="wrapper display-transition" style="display: none;">
+
+            <!-- Player Panels -->
+            <div class="panels">
+            
+            <!-- Player 1 Panel -->
+            <div class="player-panel active" id="player-panel-0">
+
+                <div class="name" id="name-0" style="display: inline-block;">Player 1</div> <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon active-sign active-sign-0" viewBox="0 0 20 20" style="display: none;">
+                    <path d="M 10.219 1.688 c -4.471 0 -8.094 3.623 -8.094 8.094 s 3.623 8.094 8.094 8.094 s 8.094 -3.623 8.094 -8.094 S 14.689 1.688 10.219 1.688 M 10.219 17.022 c -3.994 0 -7.242 -3.247 -7.242 -7.241 c 0 -3.994 3.248 -7.242 7.242 -7.242 c 3.994 0 7.241 3.248 7.241 7.242 C 17.46 13.775 14.213 17.022 10.219 17.022 M 15.099 7.03 c -0.167 -0.167 -0.438 -0.167 -0.604 0.002 L 9.062 12.48 l -2.269 -2.277 c -0.166 -0.167 -0.437 -0.167 -0.603 0 c -0.166 0.166 -0.168 0.437 -0.002 0.603 l 2.573 2.578 c 0.079 0.08 0.188 0.125 0.3 0.125 s 0.222 -0.045 0.303 -0.125 l 5.736 -5.751 C 15.268 7.466 15.265 7.196 15.099 7.03" ></path>
+                </svg>
+
+
+
+                <div class="score" id="score-0">0</div>
+
+                <div class="current-box" id="current-box-0">
+                    <div class="current-label">Current</div>
+                    <div class="current" id="current-0">0</div>
+                </div>
+
+            </div>
+
+            <!-- Player 2 Panel -->
+            <div class="player-panel" id="player-panel-1">
+                
+                <div class="name" id="name-1" style="display: inline-block;">Player 2</div> <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon active-sign active-sign-1" viewBox="0 0 20 20" style="display: none;">
+                    <path d="M 10.219 1.688 c -4.471 0 -8.094 3.623 -8.094 8.094 s 3.623 8.094 8.094 8.094 s 8.094 -3.623 8.094 -8.094 S 14.689 1.688 10.219 1.688 M 10.219 17.022 c -3.994 0 -7.242 -3.247 -7.242 -7.241 c 0 -3.994 3.248 -7.242 7.242 -7.242 c 3.994 0 7.241 3.248 7.241 7.242 C 17.46 13.775 14.213 17.022 10.219 17.022 M 15.099 7.03 c -0.167 -0.167 -0.438 -0.167 -0.604 0.002 L 9.062 12.48 l -2.269 -2.277 c -0.166 -0.167 -0.437 -0.167 -0.603 0 c -0.166 0.166 -0.168 0.437 -0.002 0.603 l 2.573 2.578 c 0.079 0.08 0.188 0.125 0.3 0.125 s 0.222 -0.045 0.303 -0.125 l 5.736 -5.751 C 15.268 7.466 15.265 7.196 15.099 7.03" ></path>
+                </svg>
+                <div class="score" id="score-1">0</div>
+
+                <div class="current-box" id="current-box-1">
+                    <div class="current-label">Current</div>
+                    <div class="current" id="current-1">0</div>
+                </div>
+
+            </div>
+        </div>    
+
+
+            <!-- Buttons -->
+            <button class="new-game icons" id="new-game"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 20 20">
+                <path d="M 14.613 10 c 0 0.23 -0.188 0.419 -0.419 0.419 H 10.42 v 3.774 c 0 0.23 -0.189 0.42 -0.42 0.42 s -0.419 -0.189 -0.419 -0.42 v -3.774 H 5.806 c -0.23 0 -0.419 -0.189 -0.419 -0.419 s 0.189 -0.419 0.419 -0.419 h 3.775 V 5.806 c 0 -0.23 0.189 -0.419 0.419 -0.419 s 0.42 0.189 0.42 0.419 v 3.775 h 3.774 C 14.425 9.581 14.613 9.77 14.613 10 M 17.969 10 c 0 4.401 -3.567 7.969 -7.969 7.969 c -4.402 0 -7.969 -3.567 -7.969 -7.969 c 0 -4.402 3.567 -7.969 7.969 -7.969 C 14.401 2.031 17.969 5.598 17.969 10 M 17.13 10 c 0 -3.932 -3.198 -7.13 -7.13 -7.13 S 2.87 6.068 2.87 10 c 0 3.933 3.198 7.13 7.13 7.13 S 17.13 13.933 17.13 10" ></path>
+            </svg> <span>New Game</span></button>
+
+            <button class="roll-dice icons" id="roll-dice"> <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 20 20">
+                <path d="M 17.659 9.597 h -1.224 c -0.199 -3.235 -2.797 -5.833 -6.032 -6.033 V 2.341 c 0 -0.222 -0.182 -0.403 -0.403 -0.403 S 9.597 2.119 9.597 2.341 v 1.223 c -3.235 0.2 -5.833 2.798 -6.033 6.033 H 2.341 c -0.222 0 -0.403 0.182 -0.403 0.403 s 0.182 0.403 0.403 0.403 h 1.223 c 0.2 3.235 2.798 5.833 6.033 6.032 v 1.224 c 0 0.222 0.182 0.403 0.403 0.403 s 0.403 -0.182 0.403 -0.403 v -1.224 c 3.235 -0.199 5.833 -2.797 6.032 -6.032 h 1.224 c 0.222 0 0.403 -0.182 0.403 -0.403 S 17.881 9.597 17.659 9.597 M 14.435 10.403 h 1.193 c -0.198 2.791 -2.434 5.026 -5.225 5.225 v -1.193 c 0 -0.222 -0.182 -0.403 -0.403 -0.403 s -0.403 0.182 -0.403 0.403 v 1.193 c -2.792 -0.198 -5.027 -2.434 -5.224 -5.225 h 1.193 c 0.222 0 0.403 -0.182 0.403 -0.403 S 5.787 9.597 5.565 9.597 H 4.373 C 4.57 6.805 6.805 4.57 9.597 4.373 v 1.193 c 0 0.222 0.182 0.403 0.403 0.403 s 0.403 -0.182 0.403 -0.403 V 4.373 c 2.791 0.197 5.026 2.433 5.225 5.224 h -1.193 c -0.222 0 -0.403 0.182 -0.403 0.403 S 14.213 10.403 14.435 10.403" ></path>
+            </svg> <span>Roll Dice</span> </button>
+
+            <button class="hold icons" id="hold"> <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 20 20">
+                <path d="M 13.889 11.611 c -0.17 0.17 -0.443 0.17 -0.612 0 l -3.189 -3.187 l -3.363 3.36 c -0.171 0.171 -0.441 0.171 -0.612 0 c -0.172 -0.169 -0.172 -0.443 0 -0.611 l 3.667 -3.669 c 0.17 -0.17 0.445 -0.172 0.614 0 l 3.496 3.493 C 14.058 11.167 14.061 11.443 13.889 11.611 M 18.25 10 c 0 4.558 -3.693 8.25 -8.25 8.25 c -4.557 0 -8.25 -3.692 -8.25 -8.25 c 0 -4.557 3.693 -8.25 8.25 -8.25 C 14.557 1.75 18.25 5.443 18.25 10 M 17.383 10 c 0 -4.07 -3.312 -7.382 -7.383 -7.382 S 2.618 5.93 2.618 10 S 5.93 17.381 10 17.381 S 17.383 14.07 17.383 10" ></path>
+            </svg> <span>Hold</span></button>
+
+            <!-- Final Score -->
+            <input type="text" id="final-score" placeholder="FINAL SCORE">
+
+            <!-- Dice -->
+            <img src="dice-6.png" alt="Dice" id="dice1" class="dice">
+            <img src="dice-1.png" alt="Dice" id="dice2" class="dice">
+
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

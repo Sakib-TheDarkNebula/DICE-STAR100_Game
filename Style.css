@@ -1,0 +1,287 @@
+/* All Elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+/* Whole Container */
+.wrapper {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #555;
+
+    width: 1000px;
+    background-color: #FFF;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+
+    box-shadow: 0px 10px 50px rgba(109, 109, 109, 0.938);
+}
+
+
+/* PLayer Panels */
+.panels {
+    display: flex;
+    background-color: rgba(236, 236, 236, 0.938);
+}
+
+
+#player-panel-0,
+#player-panel-1 {
+    width: 500px;
+    text-align: center;
+}
+
+.active {
+    background-color: #FFF;
+}
+
+#active {
+    width: 20px;
+    background-color: rgba(12, 41, 80, 0.938);
+    border-radius: 50%;
+    border: none;
+    color: rgba(12, 41, 80, 0.938);
+}
+
+/* Player Names */
+.name {
+    margin-top: 80px;
+
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+/* Player Scores */
+.score {
+    margin-top: 20px;
+
+    font-size: 100px;
+    font-weight: 100;
+
+    color: rgba(6, 152, 236, 0.938);
+}
+
+/* Player Current Score */
+.current-box {
+    width: 150px;
+    background-color: rgba(6, 152, 236, 0.938);
+    margin-left: 175px;
+
+    margin-top: 95px;
+    margin-bottom: 80px;
+}
+
+.current-label {
+    color: black;
+    text-transform: uppercase;
+
+    font-size: 18px;
+    font-weight: 200;
+
+    padding-top: 15px;
+}
+
+.current {
+    color: #FFF;
+    text-transform: uppercase;
+
+    font-size: 40px;
+    font-weight: 200;
+}
+
+
+/* Buttons */
+.icons {
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: #555; 
+    background: none; 
+    border: none; 
+    font-family: "Segoe UI"; 
+    font-size: 20px; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    font-weight: 300; 
+    transition: background-color 0.3s, color 0.3s; 
+    display: flex;
+    padding-left: 2em;
+}
+
+#new-game { top: 45px;} 
+#roll-dice { top: 400px;} 
+#hold { top: 450px;} 
+
+
+/* Final Score */
+#final-score { 
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    top: 500px; 
+    color: #555; 
+    font-size: 14px; 
+    font-family: 'Segoe UI'; 
+    text-align: center; 
+    padding: 10px; 
+    width: 160px; 
+    text-transform: uppercase; 
+} 
+
+
+/* Dice */
+.dice {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 450px;
+    outline: .001px solid #555;
+    box-shadow: 0px 20px 50px rgba(109, 109, 109, 0.938);
+
+}
+
+#dice1 {
+    top: 140px;
+}
+
+#dice2 {
+    top: 265px;
+}
+
+
+/* SVG */
+.svg-icon {
+    width: 1.45em;
+    height: 1.45em;
+    margin-right: 5px;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+    fill: rgba(0, 104, 165, 0.938);
+}
+  
+  .svg-icon circle {
+    stroke: rgba(7, 109, 168, 0.938);
+    stroke-width: 1;
+}
+
+/* Active Sign SVG */
+.active-sign {
+    width: 2em;
+    height: 2em;
+    margin-left: 10px;
+}
+
+.active-sign path,
+.active-sign polygon,
+.active-sign rect {
+    fill: rgba(201, 7, 7, 0.938);
+    outline-width: 100px;
+}
+
+/* Transition - Button */
+.icons:hover {
+    color: black;
+    font-weight: 500;
+    margin-left: 10px;
+
+    transition: ease-in-out .25s .025s;
+}
+
+
+/* BONUS FEATURES */
+.sub-conts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    background-color: rgba(255, 255, 255, 0.966);
+    margin: auto;
+    padding: 30px 100px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(61, 61, 61);
+    font-weight: 200;
+    width: 800px;
+    border-radius: 6px;
+    box-shadow: 0px 10px 50px rgba(109, 109, 109, 0.938);
+}
+
+.sub-conts > h2 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    font-weight: 200;
+}
+
+.sub-conts-change {
+    background-color: rgb(218, 218, 218);
+    font-size: 1.2rem;
+    padding: 30px;
+    border: 0.5px double black;
+    border-radius: 8px;
+}
+
+.next-btn {
+    background-color: rgb(4, 49, 75);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #FFF;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px 0px 10px 20px;
+
+    float: right;
+}
+
+.next-btn:hover {
+    background-color: rgba(0, 73, 116, 0.884);
+    padding: 10px 25px;
+    transition: ease-in .2s;
+}
+
+.player-names-cont {
+    text-align: center;
+}
+
+.player-names {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 15px;
+}
+
+.player-names:hover,
+.player-names:focus {
+    padding: 10px 25px;
+    transition: ease-in .2s;
+}
+
+.player-names-cont-header {
+    font-weight: 200;
+    color: black;
+}
+
+#name-validator {
+    color: rgba(201, 7, 7, 0.938);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
